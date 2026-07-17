@@ -1,0 +1,59 @@
+[
+  {
+    "timestamp": "2026-07-12T02:47:11.000Z",
+    "rule": {
+      "id": "550",
+      "level": 7,
+      "description": "Integrity checksum changed.",
+      "groups": ["ossec", "syscheck", "syscheck_entry_modified", "pci_dss_11.5"]
+    },
+    "agent": { "id": "003", "name": "db-server-01", "ip": "10.0.0.22" },
+    "syscheck": {
+      "path": "/etc/passwd",
+      "mode": "scheduled",
+      "size_before": "2201",
+      "size_after": "2249",
+      "md5_before": "d41d8cd98f00b204e9800998ecf8427e",
+      "md5_after": "7c4a8d09ca3762af61e59520943dc264",
+      "sha1_before": "aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d",
+      "sha1_after": "356a192b7913b04c54574d18c28d46e6395428ab",
+      "uid_after": "0",
+      "gid_after": "0",
+      "perm_after": "644"
+    },
+    "full_log": "Integrity checksum changed for '/etc/passwd'"
+  },
+  {
+    "timestamp": "2026-07-12T02:47:12.000Z",
+    "rule": {
+      "id": "554",
+      "level": 5,
+      "description": "File added to the system.",
+      "groups": ["ossec", "syscheck", "syscheck_entry_added"]
+    },
+    "agent": { "id": "003", "name": "db-server-01", "ip": "10.0.0.22" },
+    "syscheck": {
+      "path": "/etc/cron.d/systemd-update",
+      "mode": "realtime",
+      "size_after": "312",
+      "uid_after": "0",
+      "gid_after": "0",
+      "perm_after": "644"
+    },
+    "full_log": "New file '/etc/cron.d/systemd-update' added to the system."
+  },
+  {
+    "timestamp": "2026-07-12T02:47:12.000Z",
+    "rule": {
+      "id": "594",
+      "level": 12,
+      "description": "Suspicious file modification and new persistence-related file detected in short window.",
+      "groups": ["ossec", "syscheck", "syscheck_high_severity"]
+    },
+    "agent": { "id": "003", "name": "db-server-01", "ip": "10.0.0.22" },
+    "data": {
+      "related_paths": ["/etc/passwd", "/etc/cron.d/systemd-update"]
+    },
+    "full_log": "Correlated: modification to /etc/passwd followed within 1 second by new file in /etc/cron.d"
+  }
+]
