@@ -1,0 +1,65 @@
+[
+  {
+    "timestamp": "2026-07-14T19:03:22.000Z",
+    "rule": {
+      "id": "80792",
+      "level": 3,
+      "description": "Auditd: Command executed via sudo.",
+      "groups": ["audit_command", "audit"]
+    },
+    "agent": { "id": "004", "name": "app-server-02", "ip": "10.0.0.31" },
+    "data": {
+      "audit": {
+        "auid": "1001",
+        "auid_name": "labuser",
+        "euid": "0",
+        "euid_name": "root",
+        "command": "/usr/bin/vim",
+        "exe": "/usr/bin/sudo"
+      }
+    },
+    "full_log": "type=USER_CMD msg=audit(1752520502.000): auid=1001 uid=1001 euid=0 comm=\"vim\" exe=\"/usr/bin/sudo\" terminal=pts/2 res=success"
+  },
+  {
+    "timestamp": "2026-07-14T19:03:24.000Z",
+    "rule": {
+      "id": "80793",
+      "level": 8,
+      "description": "Auditd: New process spawned with elevated privileges from a non-shell parent.",
+      "groups": ["audit_command", "audit", "privilege_escalation"]
+    },
+    "agent": { "id": "004", "name": "app-server-02", "ip": "10.0.0.31" },
+    "data": {
+      "audit": {
+        "auid": "1001",
+        "auid_name": "labuser",
+        "euid": "0",
+        "euid_name": "root",
+        "command": "/bin/bash",
+        "exe": "/usr/bin/vim",
+        "parent_process": "vim"
+      }
+    },
+    "full_log": "type=USER_CMD msg=audit(1752520504.000): auid=1001 uid=1001 euid=0 comm=\"bash\" exe=\"/bin/bash\" parent=vim terminal=pts/2 res=success"
+  },
+  {
+    "timestamp": "2026-07-14T19:03:24.000Z",
+    "rule": {
+      "id": "80799",
+      "level": 12,
+      "description": "Privilege escalation: low-privilege user obtained root shell via sudo-permitted binary shell-out.",
+      "groups": ["audit", "privilege_escalation", "high_severity"]
+    },
+    "agent": { "id": "004", "name": "app-server-02", "ip": "10.0.0.31" },
+    "data": {
+      "audit": {
+        "auid": "1001",
+        "auid_name": "labuser",
+        "euid": "0",
+        "euid_name": "root",
+        "path": "/etc/sudoers.d/labuser-test"
+      }
+    },
+    "full_log": "Correlated: auid=1001 (labuser) obtained euid=0 (root) shell within 2 seconds of sudo-permitted execution of /usr/bin/vim"
+  }
+]
