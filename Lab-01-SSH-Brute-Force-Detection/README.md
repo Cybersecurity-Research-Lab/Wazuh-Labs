@@ -13,7 +13,7 @@ The goal of this lab is to walk through the raw alert data and reason through th
 
 ## How to reproduce this yourself
 
-On the monitored endpoint (with the Wazuh agent installed, see [00-setup](../00-setup/minimal-setup-for-labs.md)), simulate the attack from a separate machine using `hydra` or a simple loop:
+On the monitored endpoint (with the Wazuh agent installed, see [00-setup](../Minimal-Setup-for-Wazuh-Labs.md), simulate the attack from a separate machine using `hydra` or a simple loop:
 
 ```bash
 for i in {1..10}; do
