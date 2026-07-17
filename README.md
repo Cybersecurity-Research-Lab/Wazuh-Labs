@@ -10,10 +10,10 @@ Each lab presents a realistic attack scenario, the raw Wazuh alert(s) it generat
 
 | Lab | Scenario | Focus |
 |---|---|---|
-| [lab-01-brute-force-ssh](./lab-01-brute-force-ssh) | Repeated failed SSH logins | Authentication log analysis |
-| [lab-02-file-integrity-monitoring](./lab-02-file-integrity-monitoring) | Unauthorized file modification | FIM alerts |
-| [lab-03-privilege-escalation-detection](./lab-03-privilege-escalation-detection) | Local privilege escalation attempt | Process/syscall analysis |
-| [lab-04-malware-execution-alert](./lab-04-malware-execution-alert) | Malicious binary execution | Alert correlation |
+| [lab-01-brute-force-ssh](Lab-01-SSH-Brute-Force-Detection) | Repeated failed SSH logins | Authentication log analysis |
+| [lab-02-file-integrity-monitoring](Lab-02-File-Integrity-Monitoring) | Unauthorized file modification | FIM alerts |
+| [lab-03-privilege-escalation-detection](lab-03-Privilege-Escalation-Detection) | Local privilege escalation attempt | Process/syscall analysis |
+| [lab-04-malware-execution-alert](Lab-04-Malware-Execution-Alert) | Malicious binary execution | Alert correlation |
 
 *(Labs are added incrementally — check back for updates.)*
 
@@ -29,11 +29,11 @@ Every lab follows the same structure:
 
 ## Getting started
 
-See [00-setup/minimal-setup-for-labs.md](./00-setup/minimal-setup-for-labs.md) for a lightweight Wazuh setup — just enough to generate and view alerts, not a full production deployment guide.
+See [00-setup/minimal-setup-for-labs.md](Minimal-Setup-for-Wazuh-Labs.md) for a lightweight Wazuh setup — just enough to generate and view alerts, not a full production deployment guide.
 
 ## Resources
 
-- [wazuh-rule-syntax-cheatsheet.md](./resources/wazuh-rule-syntax-cheatsheet.md) — quick reference for writing and reading Wazuh detection rules
+- [wazuh-rule-syntax-cheatsheet.md](wazuh-rule-syntax-cheatsheet.md) — quick reference for writing and reading Wazuh detection rules
 
 ## About
 
