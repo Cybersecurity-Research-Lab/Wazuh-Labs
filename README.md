@@ -11,7 +11,7 @@ Each lab presents a realistic attack scenario, the raw Wazuh alert(s) it generat
 | Lab | Scenario | Focus |
 |---|---|---|
 | [lab-01-brute-force-ssh](Lab-01-SSH-Brute-Force-Detection) | Repeated failed SSH logins | Authentication log analysis |
-| [lab-02-file-integrity-monitoring](Lab-02- File-Integrity-Monitoring) | Unauthorized file modification | FIM alerts |
+| [lab-02-file-integrity-monitoring](Lab-02-File-Integrity-Monitoring) | Unauthorized file modification | FIM alerts |
 | [lab-03-privilege-escalation-detection](lab-03-Privilege-Escalation-Detection) | Local privilege escalation attempt | Process/syscall analysis |
 | [lab-04-malware-execution-alert](Lab-04-Malware-Execution-Alert) | Malicious binary execution | Alert correlation |
 
